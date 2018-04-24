@@ -16,11 +16,12 @@ def get_legislators():
     return rows
 
 
-def get_senate():
-    return filter_by_chamber('senate')
 
-def get_house():
-    return filter_by_chamber('house')
+def get_chamber(chamber):
+    """
+    Easy-to-call wrapper around filter_by_chamber
+    """
+    return filter_by_chamber(chamber)
 
 
 def filter_by_chamber(chamber):

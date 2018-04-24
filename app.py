@@ -1,7 +1,6 @@
 from flask import Flask
-from flask import render_template
-from data_helper import get_senate, get_house
-
+from flask import abort, render_template
+from data_helper import get_chamber
 
 
 myapp = Flask(__name__)
@@ -12,15 +11,15 @@ def homepage():
     rawhtml = render_template('homepage.html')
     return rawhtml
 
-@myapp.route("/<chamber>/")
-def members(chamber):
-    if chamber == 'senate':
-        members = get_senate()
-    elif chamber == 'house':
-        members = get_house()
-    else:
-        abort(404)
+###
+# notice how I don't have a separate senate/ and house/ route, but
+# I abstract it to a "chamber" route that spits out either Representatives or Senators
+# based on the chamber argument (e.g. "senate" or "house")
+###
 
+@myapp.route("/<chamber>/")
+def chamber(chamber):
+    members = get_chamber(chamber)
     rawhtml = render_template('members.html', members=members, chamber=chamber)
     return rawhtml
 
