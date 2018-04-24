@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Congress: The {{chamber | capitalize}}</title>
+
+    <h1>Congress: The {{chamber | capitalize}}</h1>
+
+
+    <section class="members">
+
+        {% for m in members %}
+            <div class="member">
+                <span class="name">{{m.first_name}} {{m.last_name}}</span>
+                <span class="state">{{m.state}}</span>
+            </div>
+        {% endfor %}
+    </section>
+</head>
+<body>
+
+</body>
+</html>
