@@ -1,8 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
+    <meta charset="UTF-8">    
     <title>Congress: The {{chamber | capitalize}}</title>
+    <link rel="stylesheet" href="/static/mystyles.css">
+
+
+</head>
+<body>
 
     <h1>Congress: The {{chamber | capitalize}}</h1>
 
@@ -11,13 +16,21 @@
 
         {% for m in members %}
             <div class="member">
-                <span class="name">{{m.first_name}} {{m.last_name}}</span>
+                
+                    
+                <a href="https://www.congress.gov/member/_/{{m['bioguide_id']}}">
+                    <img src="https://www.congress.gov/img/member/{{ m.bioguide_id | lower  }}_200.jpg" alt="Photo of {{m['first_name']}} {{m.last_name}}">                
+                    
+                    <span class="name">{{m['first_name']}} {{m.last_name}}</span>
+                </a>
+                    
+               
                 <span class="state">{{m.state}}</span>
             </div>
         {% endfor %}
     </section>
-</head>
-<body>
+
+
 
 </body>
 </html>

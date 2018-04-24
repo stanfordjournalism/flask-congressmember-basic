@@ -1,0 +1,26 @@
+body{
+    font-family: Helvetica, Arial; 
+}
+
+
+img{
+    border: 1px solid black;
+}
+
+a:link{
+    color: rgb(1, 94, 38);
+    font-weight: bold;
+}
+
+a:hover{
+    color: orange;
+}
+
+section.members{
+    margin-top: 60px;
+}
+
+
+div.member{
+    margin: 30px;
+}
