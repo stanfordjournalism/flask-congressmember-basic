@@ -38,12 +38,11 @@ def filter_by_chamber(chamber):
     legislative chamber
     """
 
+    thetype = ''
     if chamber.lower() == 'house':
         thetype = 'rep'
     elif chamber.lower() == 'senate':
         thetype = 'sen'
-    else:
-        raise ValueError('The chamber argument must be either "house" or "senate"')
 
     fdata = []
     for r in get_legislators():

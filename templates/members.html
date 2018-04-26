@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">    
+    <meta charset="UTF-8">
     <title>Congress: The {{chamber | capitalize}}</title>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
     <link rel="stylesheet" href="/static/mystyles.css">
-
-
 </head>
 <body>
 
@@ -16,15 +16,15 @@
 
         {% for m in members %}
             <div class="member">
-                
-                    
+
+
                 <a href="https://www.congress.gov/member/_/{{m['bioguide_id']}}">
-                    <img src="https://www.congress.gov/img/member/{{ m.bioguide_id | lower  }}_200.jpg" alt="Photo of {{m['first_name']}} {{m.last_name}}">                
-                    
+                    <img src="https://theunitedstates.io/images/congress/225x275/{{m.bioguide_id}}.jpg" alt="Photo of {{m['first_name']}} {{m.last_name}}">
+
                     <span class="name">{{m['first_name']}} {{m.last_name}}</span>
                 </a>
-                    
-               
+
+
                 <span class="state">{{m.state}}</span>
             </div>
         {% endfor %}

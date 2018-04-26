@@ -1,5 +1,6 @@
 body{
-    font-family: Helvetica, Arial; 
+    background-color: #eaeaff;
+
 }
 
 
@@ -18,9 +19,4 @@ a:hover{
 
 section.members{
     margin-top: 60px;
-}
-
-
-div.member{
-    margin: 30px;
 }
